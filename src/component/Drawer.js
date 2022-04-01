@@ -19,7 +19,7 @@ const useStyles = makeStyles(()=>({
         fontSize: "20px",
     },
     icon:{
-        color: "white"
+        color: "black"
     }
 }));
 
@@ -41,19 +41,31 @@ function DrawerComponent() {
           <Divider/>
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/about" className={classes.link}>About</Link>
+              <Link to="/" className={classes.link}>Home</Link>
             </ListItemText>
           </ListItem>
           <Divider/>
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/contact" className={classes.link}>Contact</Link>
+              <Link to="/english-tour" className={classes.link}>English Tour</Link>
             </ListItemText>
           </ListItem>
           <Divider/>
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/about" className={classes.link}>Faq</Link>
+              <Link to="/whowe" className={classes.link}>Who we are?</Link>
+            </ListItemText>
+          </ListItem>
+          <Divider/>
+          <ListItem onClick={() => setOpenDrawer(false)}>
+            <ListItemText>
+              <Link to="/take-tour" className={classes.link}>Take a tour</Link>
+            </ListItemText>
+          </ListItem>
+          <Divider/>
+          <ListItem onClick={() => setOpenDrawer(false)}>
+            <ListItemText>
+              <Link to="/news" className={classes.link}>News</Link>
             </ListItemText>
           </ListItem>
           <Divider/>

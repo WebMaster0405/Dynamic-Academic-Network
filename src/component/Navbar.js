@@ -1,4 +1,6 @@
+import { Styles } from './Carosu/styles';
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   AppBar,
   Toolbar,
@@ -22,12 +24,14 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     textDecoration: "none",
-    color: "white",
-    fontSize: "15px",
+    color: "black",
+    fontSize: "16px",
     marginLeft: theme.spacing(5),
     "&:hover": {
-      color: "yellow",
-      borderBottom: "1px solid white",
+      color: "#5E3FDC",
+    },
+    "&:focus": {
+      color: "#5E3FDC",
     },
   },
 }));
@@ -38,23 +42,24 @@ function Navbar() {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <AppBar position="static">
+    <Styles>
+    <AppBar position="static" style={{backgroundColor:'#FAFAFA', color:'black'}}>
       <CssBaseline />
-      <Toolbar>
-        <Typography variant="h4" className={classes.logo}>
-          Logo
+      <Toolbar className="container" style={{paddingLeft:'-24px'}}>
+        <Typography>
+          <div className="logostyle"><a>Logo</a></div>
         </Typography>
         {isMobile ? (
           <DrawerComponent />
         ) : (
-          <div className={classes.navlinks}>
+          <div className={classes.navlinks} >
             <Link to="/" className={classes.link}>
               Home
             </Link>
             <Link to="/english-tour" className={classes.link}>
               English Tour
             </Link>
-            <Link to="/who-we-are" className={classes.link}>
+            <Link to="/whowe" className={classes.link}>
               Who we are?
             </Link>
             <Link to="/take-tour" className={classes.link}>
@@ -64,9 +69,15 @@ function Navbar() {
               News
             </Link>
           </div>
+          
         )}
+        <div className="d-flex sign-up">
+            <div className='btn-search'><img src="assets/images/search-icons.png" alt="" width="30" /></div>
+            <div className='btn-sign'><a href="/signin" style={{color:'black',textDecoration:'none'}}>Sign in</a></div>
+        </div>
       </Toolbar>
     </AppBar>
+    </Styles>
   );
 }
 export default Navbar;
